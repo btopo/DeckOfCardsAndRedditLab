@@ -1,0 +1,20 @@
+﻿@model DeckOfCards_Draw
+
+<p>Here's what the server responded with:</p>
+<p>The deck ID is <bold>@Model.deck_id</bold></p>
+<p>Was the deck creation successful?  @Model.success</p>
+@{
+    foreach (var card in Model.cards)
+    {
+        <br />
+        <br />
+        <h3>Code: @card.code</h3>
+        <h3>Suit: @card.suit</h3>
+        <h3>Value: @card.value</h3>
+        <img src="@card.image" alt="@card.suit @card.value" width="90" height="150">
+        <br />
+        <br />
+
+    }
+}
+
